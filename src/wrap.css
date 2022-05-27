@@ -1,0 +1,530 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+@media (max-device-width : 414px) and (min-device-height : 667px) { 
+  .scene {
+    width: 100%;
+    height: 100vh;
+    background: url(../public/assets/Yellow_Backdrop.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #claws {
+    width: 148px;
+    height: 290px;
+    position: absolute;
+    left: 115px;
+    transition: all 100ms;
+  }
+  .claw-base {
+    width: 50px;
+    height: 300px;
+    background: url(../public/assets/Claw_Base.png);
+    background-position: bottom;
+    background-size: cover;
+    transform: translateX(48px);
+  }
+  .claw-arms {
+    width: 148px;
+    height: 100px;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    transform: translate(0px, -12px);
+  }
+
+  .claw-left {
+    width: 85px;
+    height: 85px;
+    background-image: url(../public/assets/Claw_Arm_Left.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -2;
+  }
+  .claw-right {
+    width: 85px;
+    height: 80px;
+    background-image: url(../public/assets/Claw_Arm_Right.png);
+    transform: translateX(63px);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  .moveLeft {
+    transform: translate(10px, -12px) rotate(-10deg);
+    transition-duration: 200ms;
+  }
+  .releaseMoveLeft{
+    animation: clawsReleaseMoveLeft 600ms linear;
+  }
+  @keyframes clawsReleaseMoveLeft {
+    0% {
+      transform: translate(10px, -12px) rotate(-10deg);
+    }
+    40% {
+      transform: translate(-10px, -12px) rotate(10deg);
+    }
+    90% {
+      transform: translate(10px, -12px) rotate(-10deg);
+    }
+    100% {
+      transform: translate(0px, -12px) rotate(0deg);
+    }
+  }
+  
+  .moveRight {
+    transform: translate(-10px, -12px) rotate(10deg);
+    transition-duration: 300ms;
+  }
+  .releaseMoveRight{
+    animation: clawsReleaseMoveRight 600ms linear;
+  }
+  @keyframes clawsReleaseMoveRight {
+    0% {
+      transform: translate(-10px, -12px) rotate(10deg);
+    }
+    40% {
+      transform: translate(10px, -12px) rotate(-10deg);
+    }
+    90% {
+      transform: translate(-10px, -12px) rotate(10deg);
+    }
+    100% {
+      transform: translate(0px, -12px) rotate(0deg);
+    }
+  }
+
+  .claw-left-closed {
+    transform: translate(13px, 5px) rotate(-20deg);
+  }
+  .claw-right-closed {
+    transform: translate(53px, 5px) rotate(20deg);
+  }
+
+  .single-pizza {
+    width: 85px;
+    height: 210px;
+    background: url(../public/assets/SingleBox.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translate(-15px, -25px) rotate(290deg) scale(0.45);
+    z-index: -1;
+    margin-left: 45px;
+  }
+
+  .down {
+    animation: down 2s linear;
+  }
+  @keyframes down {
+    0% {
+        height: 300px;
+    }
+    100% {
+        height: 800px;
+    }
+  }
+
+  .up {
+    animation: up 2s linear;
+  }
+  @keyframes up {
+    0% {
+        height: 750px;
+    }
+    100% {
+        height: 300px;
+    }
+  }
+
+  .pizza-pile {
+    display: block;
+    background: url(../public/assets/PizzaPile.png);
+    background-position: 51% 72%;
+    background-size: 250%;
+    background-repeat: repeat-x;
+    height: 107px;
+    width: 100%;
+    position: absolute;
+    bottom: 155px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .table-top {
+    display: block;
+    background: url(../public/assets/Table_Top.png);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 303%;
+    height: 200px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+}
+@media only screen and (min-device-width : 768px) and (max-device-width : 1023px) and (-webkit-min-device-pixel-ratio: 2) {
+  .scene {
+    width: 100%;
+    height: 100vh;
+    background: url(../public/assets/Yellow_Backdrop.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #claws {
+    width: 173px;
+    height: 500px;
+    position: absolute;
+    left: 315px;
+    transition: all 100ms;
+  }
+  .claw-base {
+    width: 70px;
+    height: 500px;
+    background: url(../public/assets/Claw_Base.png);
+    background-position: bottom;
+    background-size: cover;
+    transform: translateX(50px);
+  }
+  .claw-arms {
+    width: 148px;
+    height: 100px;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    transform: translate(0px, -12px);
+  }
+
+  .claw-left {
+    width: 100px;
+    height: 100px;
+    background-image: url(../public/assets/Claw_Arm_Left.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -2;
+  }
+  .claw-right {
+    width: 100px;
+    height: 95px;
+    background-image: url(../public/assets/Claw_Arm_Right.png);
+    transform: translateX(73px);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  .moveLeft {
+    transform: translate(10px, -12px) rotate(-10deg);
+    transition-duration: 200ms;
+  }
+  .releaseMoveLeft{
+    animation: clawsReleaseMoveLeft 600ms linear;
+  }
+  @keyframes clawsReleaseMoveLeft {
+    0% {
+      transform: translate(10px, -12px) rotate(-10deg);
+    }
+    40% {
+      transform: translate(-10px, -12px) rotate(10deg);
+    }
+    90% {
+      transform: translate(10px, -12px) rotate(-10deg);
+    }
+    100% {
+      transform: translate(0px, -12px) rotate(0deg);
+    }
+  }
+  
+  .moveRight {
+    transform: translate(-10px, -12px) rotate(10deg);
+    transition-duration: 300ms;
+  }
+  .releaseMoveRight{
+    animation: clawsReleaseMoveRight 600ms linear;
+  }
+  @keyframes clawsReleaseMoveRight {
+    0% {
+      transform: translate(-10px, -12px) rotate(10deg);
+    }
+    40% {
+      transform: translate(10px, -12px) rotate(-10deg);
+    }
+    90% {
+      transform: translate(-10px, -12px) rotate(10deg);
+    }
+    100% {
+      transform: translate(0px, -12px) rotate(0deg);
+    }
+  }
+
+  .claw-left-closed {
+    transform: translate(13px, 0px) rotate(-20deg);
+  }
+  .claw-right-closed {
+    transform: translate(60px, 0px) rotate(20deg);
+  }
+
+  .single-pizza {
+    width: 85px;
+    height: 210px;
+    background: url(../public/assets/SingleBox.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translate(-3px, -25px) rotate(290deg) scale(0.6);
+    z-index: -1;
+    margin-left: 45px;
+  }
+
+  .down {
+    animation: down 2s linear;
+  }
+  @keyframes down {
+    0% {
+        height: 500px;
+    }
+    100% {
+        height: 850px;
+    }
+  }
+
+  .up {
+    animation: up 2s linear;
+  }
+  @keyframes up {
+    0% {
+        height: 780px;
+    }
+    100% {
+        height: 500px;
+    }
+  }
+  
+  .pizza-pile {
+    display: block;
+    background: url(../public/assets/PizzaPile.png);
+    background-position: 51% 72%;
+    background-size: 225%;
+    background-repeat: repeat-x;
+    height: 240px;
+    width: 100%;
+    position: absolute;
+    bottom: 304px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .table-top {
+    display: block;
+    background: url(../public/assets/Table_Top.png);
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    background-size: 280%;
+    height: 448px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+}
+@media only screen and (min-device-width: 912px) {
+  .scene {
+    width: 800px;
+    height: 100vh;
+    background: url(../public/assets/Yellow_Backdrop.png);
+    background-position: 50% 90%;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #claws {
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    left: 300px;
+    transition: all 100ms;
+  }
+  .claw-base {
+    width: 70px;
+    height: 300px;
+    background: url(../public/assets/Claw_Base.png);
+    background-position: bottom;
+    background-size: cover;
+    transform: translateX(60px);
+  }
+
+  .claw-arms {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    position: relative;
+    z-index: 10;
+    transform: translate(0px, -16px);
+  }
+
+  .moveLeft {
+    transform: translate(10px, -16px) rotate(-10deg);
+    transition-duration: 200ms;
+  }
+  .releaseMoveLeft{
+    animation: clawsReleaseMoveLeft 600ms linear;
+  }
+  @keyframes clawsReleaseMoveLeft {
+    0% {
+      transform: translate(10px, -16px) rotate(-10deg);
+    }
+    40% {
+      transform: translate(-10px, -16px) rotate(10deg);
+    }
+    90% {
+      transform: translate(10px, -16px) rotate(-10deg);
+    }
+    100% {
+      transform: translate(0px, -16px) rotate(0deg);
+    }
+  }
+  
+  .moveRight {
+    transform: translate(-10px, -16px) rotate(10deg);
+    transition-duration: 300ms;
+  }
+  .releaseMoveRight{
+    animation: clawsReleaseMoveRight 600ms linear;
+  }
+  @keyframes clawsReleaseMoveRight {
+    0% {
+      transform: translate(-10px, -16px) rotate(10deg);
+    }
+    40% {
+      transform: translate(10px, -16px) rotate(-10deg);
+    }
+    90% {
+      transform: translate(-10px, -16px) rotate(10deg);
+    }
+    100% {
+      transform: translate(0px, -16px) rotate(0deg);
+    }
+  }
+
+  .claw-left {
+    width: 110px;
+    height: 110px;
+    background-image: url(../public/assets/Claw_Arm_Left.png);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    z-index: -2;
+  }
+  .claw-right {
+    width: 115px;
+    height: 108px;
+    background-image: url(../public/assets/Claw_Arm_Right.png);
+    transform: translateX(83px);
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+  }
+
+  .claw-left-closed {
+    transform: translate(16px, 5px) rotate(-20deg);
+  }
+  .claw-right-closed {
+    transform: translate(70px, 5px) rotate(20deg);
+  }
+
+  .single-pizza {
+    width: 85px;
+    height: 210px;
+    background: url(../public/assets/SingleBox.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: translate(10px, -10px) rotate(290deg) scale(0.7);
+    z-index: -1;
+    margin-left: 45px;
+  }
+
+  .down {
+    animation: down 2s linear;
+  }
+  @keyframes down {
+    0% {
+        height: 300px;
+    }
+    100% {
+        height: 850px;
+    }
+  }
+
+  .up {
+    animation: up 2s linear;
+  }
+  @keyframes up {
+    0% {
+        height: 700px;
+    }
+    100% {
+        height: 300px;
+    }
+  }
+
+  .pizza-pile {
+    display: block;
+    background: url(../public/assets/PizzaPile.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat-x;
+    height: 1000px;
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .table-top {
+    display: block;
+    background: url(../public/assets/Table_Top.png);
+    background-position: 50% 100%;
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+}
